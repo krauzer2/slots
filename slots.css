@@ -1,0 +1,128 @@
+
+body{
+    background-color: black;
+    color:white;
+}
+
+#paytable{
+    border:#108ff4 solid 3px;
+    border-radius:10px;
+    width:fit-content;
+    white-space:nowrap;
+}
+
+.machineInnerArea {
+    font-size: 50px;
+    text-align: center;
+    background-color: black;
+    max-width: 800;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+#sWinMsg {
+    visibility: hidden; 
+    padding-left: 150px;
+    padding-right: 150px;
+    animation-duration: 200ms;
+
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
+    -moz-animation: glow 1s ease-in-out infinite alternate;
+    animation: glow 1s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #1084ff, 0 0 40px #1084ff, 0 0 50px #1084ff, 0 0 60px #1084ff, 0 0 70px #1084ff;
+    }
+    to {
+        text-shadow: 0 0 20px #fff, 0 0 30px #3a93ff, 0 0 40px #3a93ff, 0 0 50px #3a93ff, 0 0 60px #3a93ff, 0 0 70px #3a93ff, 0 0 80px #3a93ff;
+    }
+}
+
+@keyframes blink {
+    0%   {background-color:#ff0000;}
+    25%  {background-color:#ff6d86;}
+    50%  {background-color:#b40002;}
+    75%  {background-color:#ff6d86;}
+    100% {background-color:red;}
+    from{
+        opacity: 1;
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+        }
+    to{
+        opacity: 0;
+        text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+        }
+}
+
+@keyframes ImgBlink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.plus{
+    font-size: 20px;
+    font-style: bold;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.payImg{
+    width: 56.4px;
+    height: 48.4px;
+}
+
+#machineTop{
+    border-top-right-radius: 10px;
+    border-bottom: none;
+    border-top-left-radius: 10px;
+}
+
+#machineMiddle{
+    text-align: center;
+    border-left: 3px ;
+    border-right: 3px ;
+}
+
+
+.blinking {
+    -webkit-animation: ImgBlink .5s;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation: ImgBlink 0.5s;
+    -moz-animation-iteration-count: infinite;
+    -o-animation: ImgBlink 0.5s;
+    -o-animation-iteration-count: infinite;
+}
+
+@font-face {
+    font-family: 'digital';
+    src: url('./content/DIGITALDREAM.ttf');
+}
+
+#btnSpin{
+    left: 50%;
+    height:80px;
+    margin-top:20px
+}
+
+#valMsg{
+    visibility: hidden;
+    color:red;
+    text-align: left;
+}
+
+#txtBalance{
+    font-family: digital;
+    background-color:#108ff4
+}
+
