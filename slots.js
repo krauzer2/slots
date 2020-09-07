@@ -63,14 +63,14 @@ function initialize()
             {
                 imgObj=this.images[i];
                 imgObj.position=imgObj.position + this.pixelstep;
-                if(imgObj.position+121>=ImageBox.height)
+                if(imgObj.position+ImageHeight>=ImageBox.height)
                     overflowImgIndex=i;
             }   
 
             //check if image needs to go back on top.
             if(overflowImgIndex>-1)
             {
-                this.images[overflowImgIndex].position=this.images[overflowImgIndex+1>this.images.length-1?0:overflowImgIndex+1].position-121;
+                this.images[overflowImgIndex].position=this.images[overflowImgIndex+1>this.images.length-1?0:overflowImgIndex+1].position-ImageHeight;
             }
             
             this.images.forEach((imgObj)=>{
@@ -119,9 +119,9 @@ function initialize()
 
     }
 
-    Slot1=new Slot(1,2,100 + 1*((canvas.width-200)/6)-(141/2));
-    Slot2=new Slot(2,2.5,100+ 3*((canvas.width-200)/6)-(141/2));
-    Slot3=new Slot(3,3,100 + 5*((canvas.width-200)/6)-(141/2));
+    Slot1=new Slot(1,2,100 + 1*((canvas.width-200)/6)-(ImageWidth/2));
+    Slot2=new Slot(2,2.5,100+ 3*((canvas.width-200)/6)-(ImageWidth/2));
+    Slot3=new Slot(3,3,100 + 5*((canvas.width-200)/6)-(ImageWidth/2));
 
     ctx.fillStyle = "black";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -158,7 +158,7 @@ function getImages()
         images.push(
             {image : image, position :initialImagePosition-relativePosition, name: img.substring(10,img.length-4)}
         );
-        initialImagePosition+=121;
+        initialImagePosition+=ImageHeight;
     });
 
     return images;
@@ -440,4 +440,11 @@ function shuffle(array) {
     }
 
     return array;
+}
+
+function toggleDebugOptions(elem){
+    if(elem.checked)
+        $(".dhide").css('visibility','visible');
+    else
+        $(".dhide").css('visibility','hidden');
 }

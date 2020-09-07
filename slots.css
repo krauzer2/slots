@@ -126,3 +126,7 @@ body{
     background-color:#108ff4
 }
 
+.dhide{
+    visibility: hidden;
+}
+

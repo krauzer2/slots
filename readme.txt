@@ -15,13 +15,13 @@ This project is a slot machine
 ## User Guide
     Press the spin button to spin the slots!
     You may freely enter a number from 0 to 5000.
-    Each spin costs 1 coin of your balance. You need at least 1 to be able to play
+    Each spin costs 1 coin of your balance. You need at least 1 to be able to play.
 
 ## Debug 
-    You may use the the fixed mode to make the slots stop at specific place
-    1.Click on the fixed checkBox
+    You may use the the fixed mode to make the slots stop at specific place.
+    1.Click on the fixed checkBox to reveal the options available.
     2.Choose the image you wish from the drop down list for each slot
-    3.Choose the position you wish the image to land
+    3.Choose the position you wish the image to land.
 
 ## Technologies used
     Bootrstrap 4.5.2
@@ -33,5 +33,5 @@ This project is a slot machine
     digitaldream font
 
 ## Launch
-    open the index.html file with your Google Chrome
+    open the index.html file with your Google Chrome.
 

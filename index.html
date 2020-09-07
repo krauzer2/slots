@@ -50,8 +50,8 @@
             <label for="cbMode">Choose mode:</label>
             <br />
             fixed: 
-            <input type="checkbox" value="fixed" id="cbMode">
-            <br/>
+            <input type="checkbox" value="fixed" id="cbMode" onchange="toggleDebugOptions(this);">
+            <div class="dhide">
             Slot1: 
             <label for="dbgImgSlot1">Choose image:</label>
             <select name="imgSlot1" id="dbgImgSlot1">
@@ -67,7 +67,8 @@
               <option value=0>center</option>
               <option value=5>bottom</option>
             </select>
-            <br/>
+            </div>
+            <div class="dhide">
             Slot2: 
             <label for="dbgImgSlot2">Choose image:</label>
             <select name="imgSlot2" id="dbgImgSlot2">
@@ -83,7 +84,8 @@
               <option value=0>center</option>
               <option value=5>bottom</option>
             </select>
-            <br />
+            </div>
+            <div class="dhide">
             Slot3: 
             <label for="dbgImgSlot3">Choose image:</label>
             <select name="imgSlot3" id="dbgImgSlot3">
@@ -99,6 +101,7 @@
             <option value=0>center</option>
             <option value=5>bottom</option>
             </select>
+            </div>
         </div>
         <div class="col-md-6">
             <div id="paytable" class="container">
@@ -153,7 +156,9 @@
 
     var canvas = $("#myCanvas")[0];
     var ctx = canvas.getContext("2d");
-    var ImageBox={height:121*5};
+    var ImageHeight=121;
+    var ImageWidth=141;
+    var ImageBox={height:ImageHeight*5};
     var timestampStart=new Date();
     var ReqAnimation;
     var isDrawLine=false;
