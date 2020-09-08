@@ -83,13 +83,9 @@ function initialize()
                 
                 if((timestampStop-timestampStart)/1000 > this.stopTime)
                     {
-                        if(!this.EndBetweenSlots && this.images[this.chosenSlot].position >=60-speedStep && this.images[this.chosenSlot].position<=60)
+                        if(!this.EndBetweenSlots && this.images[this.chosenSlot].position >=endPositions[0]-speedStep && this.images[this.chosenSlot].position<=endPositions[0])
                         {
-                            var finalPos=[60.5
-                                ,181.5
-                                ,302.5
-                                ,-181.5
-                                ,-60.5];
+                            var finalPos=endPositions.map(r=>r+2);;
                             var counter=0
                             for(var i =this.chosenSlot;i<this.chosenSlot+5;i++)
                             {
@@ -98,13 +94,9 @@ function initialize()
                             }
                             this.endSpin();
                         }
-                        else if(this.EndBetweenSlots && this.images[this.chosenSlot].position >=120-speedStep && this.images[this.chosenSlot].position<=120)
+                        else if(this.EndBetweenSlots && this.images[this.chosenSlot].position >=2*endPositions[0]-speedStep && this.images[this.chosenSlot].position<=2*endPositions[0])
                         {
-                            var finalPos=[120
-                                ,241
-                                ,362
-                                ,483
-                                ,-1];
+                            var finalPos=endPositions.map(r=>r+endPositions[0]+2);
                             var counter=0
                             for(var i =this.chosenSlot;i<this.chosenSlot+5;i++)
                             {
@@ -156,11 +148,15 @@ function getImages()
         var image = new Image();
         image.src = img;
         images.push(
-            {image : image, position :initialImagePosition-relativePosition, name: img.substring(10,img.length-4)}
+            {image : image, position :initialImagePosition-relativePosition+2, name: img.substring(10,img.length-4)}
         );
         initialImagePosition+=ImageHeight;
     });
-
+    
+    endPositions=endPositions=images
+        .slice((images.length/2))
+        .concat(images.slice(0,(images.length/2)))
+        .map(img=>img.position);
     return images;
 }
 
